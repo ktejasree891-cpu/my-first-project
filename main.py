@@ -1,4 +1,14 @@
-students = []
+import json
+def load_data():
+    try:
+        with open("students.json", "r") as file:
+            return json.load(file)
+    except:
+        return []
+        def save_data(data):
+    with open("students.json", "w") as file:
+        json.dump(data, file)
+        students = load_data()
 
 def add_student():
     name = input("Enter student name: ")
